@@ -1,0 +1,29 @@
+<div>
+  <h1>Rover's New Website</h1>
+  <p>Minimum Acceptable Rating Score</p>
+  <md-slider-container>
+      <md-slider min="0" max="5" ng-model="$ctrl.minRankingToShow" class="md-primary">
+      </md-slider>
+      <div>{{$ctrl.minRankingToShow}}</div>
+    </md-slider-container>
+  <ul class="sitters">
+    <li ng-repeat="sitter in $ctrl.sitters | orderBy:$ctrl.orderProp"
+        class="thumbnail sitter-list-item"
+        ng-if="$ctrl.shouldShow(sitter.ratingsScore)">
+      <div class="sitter-image-container">
+        <img class="sitter-image" ng-src="{{sitter.sitterImage}}"/>
+      </div>
+      <b class="sitter-name">{{sitter.sitterName}}</b>
+      {{$ctrl.roundTwoDecimalPlaces(sitter.ratingsScore)}}
+      <div>{{sitter.overallRank}}</div>
+      <md-input-container>
+        <label>Rate this Sitter</label>
+        <input ng-model="sitter.newRating" type="number" min=0 max=5>
+      </md-input-container>
+      <md-button class="md-primary md-raised add-sitter-button"
+          ng-click="$ctrl.addRatingToSitter(sitter.newRating, sitter)">
+        Submit New Rating
+      </md-button>
+    </li>
+  </ul>
+</div>
