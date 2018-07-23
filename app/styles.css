@@ -1,0 +1,42 @@
+md-slider-container {
+  padding-left: 40px;
+  width: 60%;
+}
+
+body {
+  padding: 20px;
+}
+
+h1 {
+  border-bottom: 1px solid gray;
+  margin-top: 20px;
+  padding-left: 40px;
+}
+
+/* View: Phone list */
+.sitters {
+  list-style: none;
+}
+
+.sitters li {
+  clear: both;
+  height: 140px;
+  padding-top: 15px;
+}
+
+.sitter-image-container {
+  float: left;
+  height: 100px;
+  margin: -0.5em 1em 1.5em 0;
+  padding-bottom: 1em;
+  width: 100px;
+}
+
+.sitter-image {
+  max-height: 120px;
+  max-width: 100px;
+}
+
+.add-sitter-button {
+  margin-top: -22px;
+}
